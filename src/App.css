@@ -1,0 +1,172 @@
+body{
+    background: rgb(245, 247, 253);
+}
+
+@font-face {
+	font-family: 'Cavorting'; 
+	src: url(../src/fonts/Cavorting.otf); 
+}
+
+.App{
+    font-family: 'Cavorting';
+    margin: 0px auto;
+    width: 1200px;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.footer{
+    display: flex;
+    height: 60px;
+    justify-content: space-around;
+    border-radius: 0px 0px 10px 10px;
+    background: gray;
+}
+.logo{
+    font-size: 30px;
+    text-decoration: underline;
+}
+.copy-rigths{
+    font-family: 'Courier New', Courier, monospace;
+    margin-top:20px;
+}
+/*GuestPage Styles*/
+a{
+    color: black;
+    font-family: 'Cavorting';
+}
+.guest__header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 60px;
+    background: rgb(152, 152, 194);
+    border-radius: 10px 10px 0px 0px;
+    align-items: center;
+}
+
+.guest__header-logo
+{
+    font-size: 30px;
+}
+
+.guest__header-navbar{
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.guest__header-navbar a {
+    font-size: 20px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.guest__header-navbar a:hover {
+    color: rgb(255, 5, 5);
+}
+
+.guest__page{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    background: rgb(227, 228, 241);
+    border: 1px grey solid;
+    padding: 44px;
+}
+
+/*authorizationComponent*/
+
+.guest_form{
+    border-radius: 8px;
+    background: white;
+    border: 1px grey solid;
+    display: flex;
+    width: 550px;
+    height: 420px;
+    align-items: center;
+    flex-direction: column;
+    box-shadow:wheat 0px  3px 3px 3px;
+    padding: 80px 40px 0px;
+}
+
+.auth__input{
+    border-radius: 5px;
+    width:400px;
+    border: 2px rgb(223, 217, 217) solid;
+    font-size: 20px;
+    text-align: center;
+    height: 30px;
+    margin-bottom: 17px;
+}
+
+.guest__button{
+    width:300px;
+    font-style: italic;
+    height: 43px;
+    background: rgb(174, 102, 241);
+    border-radius: 7px;
+    border: none;
+    transition: 0.3s;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.guest__button:hover{
+    background: rgb(192, 97, 255);
+    cursor: pointer;
+}
+
+.auth__content
+{
+    display: block;
+    padding: 40px;
+}
+.auth__content__app-name{
+    color: rgb(197, 176, 243);
+    font-size: 44px;
+    font-weight: bold;
+}
+
+.auth__content__description{
+    font-size: 20px;
+}
+
+.register{
+    flex-direction: column;
+    align-items: center;
+}
+
+.register__label{
+    font-size: 30px;
+}
+
+.register__input{
+    border: 2px solid grey;
+    border-radius: 4px;
+    width: 400px;
+    height: 40px;
+    font-size: 20px;
+    color: gray;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+
+/*AuthPage Styles*/
+.layout{
+    background: rgb(253, 239, 239);
+    width: 1200px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.auth-layout__header{
+    width: 1200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
