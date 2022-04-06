@@ -1,8 +1,8 @@
 function UserPage() {
     return ( 
-    <div className="auth__page">
+    <div className="page">
         <div className="user__photo">
-            <img src="" alt="" />
+            <img src="../../../img/Avatar.jpg" alt="" />
         </div>  
         <div className="user__nickname"></div>
         <div className="user__"></div>

@@ -22,7 +22,7 @@ function Registration(props) {
         
     }
     return ( 
-    <div className="guest__page register">
+    <div className="page register">
         <div className="register__description">
             <p>Make an account in some clicks with <span className="logo">logo</span></p>
         </div>

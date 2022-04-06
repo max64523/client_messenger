@@ -1,15 +1,14 @@
 import './App.css';
 import Layout from './components/layout/Layout';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import Footer from './components/UI/Footer';
+import {Context} from './Context';
 function App() {
-  const [isAuth,setIsAuth] = useState(false);
-
   return (
-    <div className="App">
-      <Layout isAuth={isAuth} setIsAuth={setIsAuth}/>
-      <Footer/>
-    </div>
+      <div className="App">
+        <Layout/>
+        <Footer/>
+      </div>
   );
 }
 

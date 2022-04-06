@@ -1,14 +1,24 @@
-import {useState} from 'react';
+import {useState, useContext, useEffect} from 'react';
+import { Context } from '../../../Context';
 
 function Auhtorization(props) {
     const [login,setLogin] = useState('')
     const [password,setPassword] = useState('')
     const authorization = ( ) => {
-        props.setIsAuth(true);
+        setIsAuth(true);
     }
+    const {isAuth, setIsAuth} = useContext(Context)
 
+    // useEffect( 
+    //     () => {
+    //             localStorage.removeItem('auth')
+    //             localStorage.setItem('auth',isAuth)
+    //             console.log(isAuth);
+    //             },
+    //     [isAuth]
+    // )
     return (
-        <div className='guest__page'> 
+        <div className='page'> 
             <div className='guest_form' >
                 <input 
                     className='auth__input'
