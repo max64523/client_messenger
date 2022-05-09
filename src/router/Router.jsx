@@ -5,14 +5,14 @@ import {useContext} from "react";
 import {Context} from "../Context";
 
 function Router(props) {
-    const {isAuth, setIsAuth} = useContext(Context)
+    const {isAuth} = useContext(Context)
     return ( 
         <Routes>
             {!isAuth 
                 ? 
                 publicRouter.map((route,index) => {return <Route path={route.path} element={route.component} key={index}/>})
                 :
-                privateRouter.map((route,index) => {return <Route path={route.path} element={route.component} key={index} onMount={console.log(route)}/>})    
+                privateRouter.map((route,index) => {return <Route path={route.path} element={route.component} key={index}/>})    
             }
         </Routes> 
     );

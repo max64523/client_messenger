@@ -1,12 +1,10 @@
 function Message(props) {
     return ( 
-    <div className="message">
-
-        
-        <div className="data">
-        
-        </div>        
-    </div> );
+    <>
+        <div className={"message" + (props.myMes ? " right" : " left")}>
+            {props.message.message}
+        </div> 
+    </>);
 }
 
 export default Message;

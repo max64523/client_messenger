@@ -1,25 +1,33 @@
-import {useState, useContext, useEffect} from 'react';
+import {useState, useContext} from 'react';
 import { Context } from '../../../Context';
+import axios from 'axios';
+
 
 function Auhtorization(props) {
     const [login,setLogin] = useState('')
     const [password,setPassword] = useState('')
-    const authorization = ( ) => {
-        setIsAuth(true);
-    }
-    const {isAuth, setIsAuth} = useContext(Context)
+    const {setIsAuth} = useContext(Context)
 
-    // useEffect( 
-    //     () => {
-    //             localStorage.removeItem('auth')
-    //             localStorage.setItem('auth',isAuth)
-    //             console.log(isAuth);
-    //             },
-    //     [isAuth]
-    // )
+    const authorization = async ( ) => {
+        try{
+            await axios.post("http://localhost:5000/api/login",
+                {email:login,
+                 password:password}
+                )
+            .then(response => {
+                setIsAuth(response.data.user.isActivated)
+                localStorage.setItem('user',JSON.stringify(response.data))
+            })
+        } catch(e)
+        {
+            console.log(e);
+        }
+    }
+
+
     return (
         <div className='page'> 
-            <div className='guest_form' >
+            <div className='form' >
                 <input 
                     className='auth__input'
                     type="text" 

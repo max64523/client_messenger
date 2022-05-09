@@ -1,11 +1,13 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
 import axios from 'axios';
+import { Context } from "../../../Context";
 
 function Registration(props) {
     const [login,setLogin] = useState('')
     const [password,setPassword] = useState('')
     const [userName,setUserName] = useState('')
-
+    const {setIsAuth} = useContext(Context)
+    
     const registration = async () => {
         try{
             await axios.post("http://localhost:5000/api/registration",
@@ -13,20 +15,20 @@ function Registration(props) {
                  password,
                  name:userName})
             .then(response => {
-                console.log(response);
+                setIsAuth(response.data.user.isActivated)
+                localStorage.setItem('user',JSON.stringify(response.data))
             })
-        } catch(e)
-        {
+        } catch(e) {
             console.log(e);
         }
-        
     }
+    
     return ( 
     <div className="page register">
         <div className="register__description">
             <p>Make an account in some clicks with <span className="logo">logo</span></p>
         </div>
-        <div className='guest_form'>
+        <div className='form'>
             <label className="register__label">Name</label>
             <input 
                 className='register__input'
